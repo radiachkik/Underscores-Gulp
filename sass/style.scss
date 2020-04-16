@@ -45,6 +45,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Customize Bootstrap
 # Header
 # Footer
+# Particles Background
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -78,7 +79,7 @@ html {
  */
 body {
   margin: 0;
-  background: #777 !important;
+  background: black !important;
 }
 
 /**
@@ -1070,6 +1071,19 @@ footer {
 }
 footer a, footer a:visited {
   color: white;
+}
+
+/*--------------------------------------------------------------
+# Particles Background
+--------------------------------------------------------------*/
+
+#particles-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 
 

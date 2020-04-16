@@ -23,7 +23,9 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'homepage' ); ?></a>
+    <canvas id="particles-background"></canvas>
+
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'homepage' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding row">
@@ -76,7 +78,6 @@
                     array(
                         'theme_location' => 'menu-1',
                         'menu_id'        => 'primary-menu',
-                        'menu_class'     => ''
                     )
                 );
                 ?>
@@ -85,3 +86,4 @@
     </header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+
