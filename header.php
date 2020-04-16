@@ -30,16 +30,22 @@
             <?php
             if (has_custom_logo()) :
             ?>
-            <div class="col-lg-1 col-sm-2">
+            <div class="col-lg-1 col-sm-2 col-2 col">
                 <?php
                     the_custom_logo();
                 ?>
             </div>
             <?php
             endif;
+            if (has_custom_logo()):
             ?>
-            <div class="col-lg-1 col-sm-2">
+                <div class="col-xl-7 col-lg-6 col-sm-9 col-8 col">
+            <?php
+            else:
+            ?>
+                <div class="col-xl-7 col-lg-6 col-sm-11 col-10 col">
                 <?php
+            endif;
                 if ( is_front_page() && is_home() ) :
                     ?>
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -51,22 +57,14 @@
                 endif;
                 ?>
             </div>
-            <div class="col-lg-6 col-sm-7">
-                <?php
-                $homepage_description = get_bloginfo( 'description', 'display' );
-                if ( $homepage_description || is_customize_preview() ) :
-                    ?>
-                    <p class="site-description"><?php echo $homepage_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-                <?php endif; ?>
-            </div>
             <?php
             if (has_custom_logo()) :
             ?>
-            <nav id="site-navigation" class="main-navigation col-lg-4 col-sm-1">
+            <nav id="site-navigation" class="main-navigation col-xl-4 col-lg-5 col-sm-1 col-2 col">
             <?php
             else:
             ?>
-            <nav id="site-navigation" class="main-navigation col-lg-5 col-sm-1">
+            <nav id="site-navigation" class="main-navigation col-xl-5 col-lg-6 col-sm-1 col-2 col">
             <?php
             endif;
             ?>
@@ -78,6 +76,7 @@
                     array(
                         'theme_location' => 'menu-1',
                         'menu_id'        => 'primary-menu',
+                        'menu_class'     => ''
                     )
                 );
                 ?>

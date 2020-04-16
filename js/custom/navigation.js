@@ -6,6 +6,7 @@
  */
 ( function() {
 	var container, button, menu, links, i, len;
+	var toggled = false;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -30,6 +31,7 @@
 	}
 
 	button.onclick = function() {
+
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
@@ -37,6 +39,23 @@
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
 		}
+
+		if (!toggled) {
+			anime({
+				targets: menu,
+				left: ['-100vw', '0'],
+				easing: 'linear',
+				duration: 200,
+			});
+		} else {
+			anime({
+				targets: menu,
+				left: ['0', '-100vw'],
+				easing: 'linear',
+				duration: 200,
+			});
+		}
+		toggled = !toggled;
 	};
 
 	// Close small menu when user clicks outside

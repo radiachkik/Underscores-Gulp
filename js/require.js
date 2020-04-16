@@ -1,2 +1,6 @@
-const bootstrap = gulp = require('bootstrap');
-const fontawesome = gulp = require('@fortawesome/fontawesome-free/js/all');
+/* Just include files in app.js */
+const bootstrap = require('bootstrap');
+const fontawesome = require('@fortawesome/fontawesome-free/js/all');
+
+/* Make module global */
+window.anime = require('animejs/lib/anime');

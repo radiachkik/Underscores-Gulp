@@ -49,7 +49,7 @@ gulp.task('browserify', function() {
 
     const b = browserify({
         entries: './js/require.js',
-        debug: true
+        debug: true,
     });
 
     return b.bundle()
