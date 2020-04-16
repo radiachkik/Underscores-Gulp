@@ -44,6 +44,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Custom
 # Customize Bootstrap
 # Header
+# Footer
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -1035,6 +1036,10 @@ header a, header a:visited, header nav svg{
   color: white;
 }
 
+header a:hover {
+  text-decoration: underline;
+}
+
 /* Vertically center navigation in header */
 header .menu-main-menu-container {
   margin: 0.25em 0;
@@ -1055,6 +1060,17 @@ header .site-title {
   margin: 0;
 }
 
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+footer {
+  text-align: center;
+  color: white;
+}
+footer a, footer a:visited {
+  color: white;
+}
 
 
 
