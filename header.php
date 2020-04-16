@@ -26,36 +26,63 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'homepage' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$homepage_description = get_bloginfo( 'description', 'display' );
-			if ( $homepage_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $homepage_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'homepage' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		<div class="site-branding row">
+            <?php
+            if (has_custom_logo()) :
+            ?>
+            <div class="col-lg-1 col-sm-2">
+                <?php
+                    the_custom_logo();
+                ?>
+            </div>
+            <?php
+            endif;
+            ?>
+            <div class="col-lg-1 col-sm-2">
+                <?php
+                if ( is_front_page() && is_home() ) :
+                    ?>
+                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <?php
+                else :
+                    ?>
+                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <?php
+                endif;
+                ?>
+            </div>
+            <div class="col-lg-6 col-sm-7">
+                <?php
+                $homepage_description = get_bloginfo( 'description', 'display' );
+                if ( $homepage_description || is_customize_preview() ) :
+                    ?>
+                    <p class="site-description"><?php echo $homepage_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+                <?php endif; ?>
+            </div>
+            <?php
+            if (has_custom_logo()) :
+            ?>
+            <nav id="site-navigation" class="main-navigation col-lg-4 col-sm-1">
+            <?php
+            else:
+            ?>
+            <nav id="site-navigation" class="main-navigation col-lg-5 col-sm-1">
+            <?php
+            endif;
+            ?>
+                <button class="menu-toggle navbar-toggler" type="button" aria-controls="primary-menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-1',
+                        'menu_id'        => 'primary-menu',
+                    )
+                );
+                ?>
+            </nav><!-- #site-navigation -->
+        </div>
+    </header><!-- #masthead -->
 
 	<div id="content" class="site-content">

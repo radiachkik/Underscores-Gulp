@@ -17,8 +17,11 @@
         "url": "https://github.com/Automattic/_s/issues"
     },
     "devDependencies": {
+        "@fortawesome/fontawesome-free": "^5.13.0",
         "@wordpress/scripts": "^7.2.0",
+        "bootstrap": "^4.4.1",
         "browser-sync": "^2.26.7",
+        "browserify": "^16.5.1",
         "es6-promise": "^4.2.8",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.1",
@@ -28,9 +31,12 @@
         "gulp-plumber": "^1.2.1",
         "gulp-rename": "^2.0.0",
         "gulp-sass": "^4.0.2",
-        "gulp-uglify": "^3.0.2",
+        "gulp-terser": "^1.2.0",
         "gulp-util": "^3.0.8",
-        "node-sass": "^4.13.1"
+        "jquery": "^3.5.0",
+        "node-sass": "^4.13.1",
+        "popper.js": "^1.16.1",
+        "vinyl-source-stream": "^2.0.0"
     },
     "scripts": {
         "compile:css": "node-sass sass/style.scss style.css && node-sass sass/woocommerce.scss woocommerce.css && stylelint '*.css' --fix || true && stylelint '*.css' --fix",

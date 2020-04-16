@@ -6,9 +6,11 @@ const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 
+const source = require('vinyl-source-stream');
+const browserify = require('browserify');
 const concat = require('gulp-concat');
 const rename = require("gulp-rename");
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 
 const plumber = require('gulp-plumber');
 const gutil = require('gulp-util');
@@ -42,12 +44,28 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
+/* Browserify */
+gulp.task('browserify', function() {
+
+    const b = browserify({
+        entries: './js/require.js',
+        debug: true
+    });
+
+    return b.bundle()
+        .pipe(source('vendor.js'))
+        .pipe(gulp.dest('./js/vendor'))
+        .on('error', function () {
+            console.log("Error while browserifying the requested modules.")
+        });
+});
+
 /* Concatenate, check and minify all javascript files */
 gulp.task('js', function() {
-    return gulp.src(['./js/*.js'])
+    return gulp.src(['./js/custom/*.js', './js/vendor/*.js'])
         .pipe(concat('app.js'))
         .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
+        .pipe(terser())
         .pipe(gulp.dest('./js'))
         .pipe(browserSync.stream());
 });
@@ -76,10 +94,11 @@ gulp.task('watch', function() {
         port: 3000
     });
     gulp.watch('./sass/**/*.scss', gulp.series('sass', 'reload'));
-    gulp.watch('./js/*.js', gulp.series('js', 'reload'));
+    gulp.watch('./js/require.js', gulp.series('browserify'));
+    gulp.watch(['./js/custom/*.js', './js/vendor/*.js'], gulp.series('js', 'reload'));
     gulp.watch('./images/src/*', gulp.series('images', 'reload'));
 });
 
 /* Default Task */
-gulp.task('default', gulp.series('sass', 'js', 'images', 'watch'));
+gulp.task('default', gulp.series('sass', 'browserify', 'js', 'images', 'watch'));
 
