@@ -694,8 +694,8 @@ a:active {
   z-index: 10;
 }
 
+/* Mobile menu */
 @media screen and (max-width: ($large-size - 1)) {
-  /* Mobile menu toggled */
   .main-navigation ul {
     position: fixed;
     top: 0;
