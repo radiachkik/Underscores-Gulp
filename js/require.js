@@ -5,3 +5,4 @@ const fontawesome = require('@fortawesome/fontawesome-free/js/all');
 /* Make module global */
 window.anime = require('animejs/lib/anime');
 window.Particles = require('particlesjs');
+window.ScrollMagic = require('scrollmagic');

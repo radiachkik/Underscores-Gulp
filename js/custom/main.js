@@ -1,3 +1,4 @@
+/* On window load */
 window.onload = function() {
     Particles.init({
         selector: '#particles-background',
@@ -6,4 +7,8 @@ window.onload = function() {
         speed: 0.25,
         sizeVariations: 5,
     });
+
+    var scrollMagicController = new ScrollMagic();
+    // TODO
+
 };

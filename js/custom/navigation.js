@@ -32,12 +32,6 @@
 
 	button.onclick = function() {
 
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			button.setAttribute( 'aria-expanded', 'false' );
-		} else {
-			button.setAttribute( 'aria-expanded', 'true' );
-		}
-
 		if (!toggled) {
 			anime({
 				targets: menu,

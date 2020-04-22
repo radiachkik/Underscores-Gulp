@@ -23,7 +23,8 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-    <canvas id="particles-background"></canvas>
+
+    <canvas id="particles-background"></canvas><!-- Canvas for the particle animation -->
 
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'homepage' ); ?></a>
 

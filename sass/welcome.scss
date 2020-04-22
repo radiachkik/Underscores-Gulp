@@ -1,0 +1,114 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Landing Page
+# Service
+# About me
+# Contact
+--------------------------------------------------------------*/
+
+$medium-size: 768px;
+
+/*--------------------------------------------------------------
+# Landing Page
+--------------------------------------------------------------*/
+
+/* Position of the text on the landing page */
+.landing-page-container {
+  position: relative;
+  top: -3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 90vh;
+  width: 100%;
+}
+
+.welcome-headline {
+  font-size: 3em;
+}
+
+/* Mobile menu */
+@media screen and (max-width: ($medium-size - 1)) {
+  .welcome-headline {
+    font-size: 2em;
+  }
+}
+
+/*--------------------------------------------------------------
+# Service
+--------------------------------------------------------------*/
+
+.service-container {
+  text-align: center;
+  padding: 1em;
+  height: 100vh;
+}
+
+.service-container h2 {
+  font-size: 3em;
+  margin: 1em;
+}
+
+.service-container .wp-block-column {
+  padding: 1em;
+  background-color: #00a8cc;
+  border-radius: 1em;
+}
+
+.service-container .service-description {
+   margin: 2em 25%;
+
+ }
+
+/*--------------------------------------------------------------
+# About me
+--------------------------------------------------------------*/
+
+.about-container {
+  height: 100vh;
+}
+
+.about-container h2 {
+  font-size: 3em;
+  margin: 1em;
+}
+
+.about-container .profile-picture img{
+  border-radius: 50%;
+}
+
+.about-container .wp-block-column{
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+}
+
+.about-container svg {
+  margin: 0.5em;
+}
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+
+.contact-container {
+  height: 100vh;
+  text-align: center;
+}
+
+.contact-container h2 {
+  font-size: 3em;
+  margin: 1em;
+}
+
+.contact-container .wpcf7-text, .contact-container .wpcf7-textarea {
+  background-color: transparent;
+}
+
+.contact-container .wpcf7-submit {
+  background-color: #00a8cc;
+  width: 15%;
+}

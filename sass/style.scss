@@ -34,17 +34,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Alignments
 # Clearings
 # Widgets
+# Header
 # Content
 	## Posts and pages
 	## Comments
+# Footer
 # Infinite scroll
 # Media
 	## Captions
 	## Galleries
-# Custom
 # Customize Bootstrap
-# Header
-# Footer
 # Particles Background
 --------------------------------------------------------------*/
 
@@ -56,6 +55,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "welcome";
 
 $large-size: 992px;
 
@@ -79,7 +79,7 @@ html {
  */
 body {
   margin: 0;
-  background: black !important;
+  background: #232323 !important;
 }
 
 /**
@@ -373,14 +373,25 @@ template {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+
+@font-face {
+  font-family: OceanNormal;
+  src: url('./fonts/Ocean-Medium.ttf');
+}
+
+@font-face {
+  font-family: OceanBold;
+  src: url('./fonts/Ocean-Bold.ttf');
+}
+
 body,
 button,
 input,
 select,
 optgroup,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
+  color: white;
+  font-family: 'OceanNormal', Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -393,6 +404,7 @@ h4,
 h5,
 h6 {
   clear: both;
+  font-family: 'OceanBold', Arial, sans-serif;
 }
 
 p {
@@ -862,6 +874,48 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+/* General */
+header {
+  padding: 1em;
+}
+
+/* Color the header links and mobile menu icon*/
+header a, header a:visited, header nav svg{
+  color: white;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* Vertically center navigation in header */
+header .menu-main-menu-container {
+  margin: 0.5em 0;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Adjust columns in header */
+header .col {
+  padding: 0;
+}
+
+header .site-title {
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Colorize the contact menu item */
+#menu-item-102 a{
+  color: #00a8cc;
+}
+/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 
@@ -892,6 +946,10 @@ a:active {
   margin: 0 0 1.5em;
 }
 
+#primary {
+  margin: 0 1em 1em;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -901,6 +959,17 @@ a:active {
 
 .bypostauthor {
   display: block;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+footer {
+  text-align: center;
+}
+footer a, footer a:visited {
+  color: white;
 }
 
 /*--------------------------------------------------------------
@@ -1021,56 +1090,6 @@ object {
 /* Re-display the Theme Footer when Infinite Scroll has reached its end. */
 .row {
   margin: 0;
-}
-
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
-
-/* General */
-header {
-  padding: 1em;
-}
-
-/* Color the header links and mobile menu icon*/
-header a, header a:visited, header nav svg{
-  color: white;
-}
-
-header a:hover {
-  text-decoration: underline;
-}
-
-/* Vertically center navigation in header */
-header .menu-main-menu-container {
-  margin: 0.25em 0;
-  font-size: 1em;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* Adjust columns in header */
-header .col {
-  padding: 0;
-}
-
-header .site-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-
-footer {
-  text-align: center;
-  color: white;
-}
-footer a, footer a:visited {
-  color: white;
 }
 
 /*--------------------------------------------------------------
