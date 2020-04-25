@@ -930,8 +930,8 @@ header .site-title {
 }
 
 /* Colorize the contact menu item */
-#menu-item-102 a{
-  color: #00a8cc;
+.contact-menu a{
+  color: #00a8cc !important;
 }
 /*--------------------------------------------------------------
 # Content
@@ -986,7 +986,7 @@ header .site-title {
 footer {
   text-align: center;
 }
-footer a, footer a:visited {
+footer a, footer a:visited, footer a:hover {
   color: white;
 }
 
