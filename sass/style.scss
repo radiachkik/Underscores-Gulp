@@ -878,21 +878,21 @@ a:active {
 --------------------------------------------------------------*/
 
 /* General */
-header {
+#masthead {
   padding: 1em;
 }
 
 /* Color the header links and mobile menu icon*/
-header a, header a:visited, header a:hover, header nav svg{
+#masthead a, #masthead a:visited, #masthead a:hover, #masthead nav svg{
   color: white;
 }
 
-header a:hover {
+#masthead a:hover {
   text-decoration: underline;
 }
 
 /* Vertically center navigation in header */
-header .menu-main-menu-container {
+#masthead .menu-main-menu-container {
   margin: 0.5em 0;
   font-size: 1em;
   font-weight: bold;
@@ -900,11 +900,11 @@ header .menu-main-menu-container {
 }
 
 /* Adjust columns in header */
-header .col {
+#masthead .col {
   padding: 0;
 }
 
-header .site-title {
+#masthead .site-title {
   font-size: 2em;
   font-weight: bold;
   text-transform: uppercase;
@@ -912,7 +912,7 @@ header .site-title {
 }
 
 @media screen and (max-width: ($large-size - 1)) {
-  header {
+  #masthead {
     position: sticky;
     top: 0;
     left: 0;
@@ -924,7 +924,7 @@ header .site-title {
 }
 
 @media screen and (max-width: ($medium-size - 1)) {
-  header {
+  #masthead {
     padding: 0.5em 0 0.5em 1em;
   }
 }
