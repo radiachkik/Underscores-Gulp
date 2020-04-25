@@ -15,8 +15,8 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="/">
-                Radi Achkik © 2020
+			<a href="/privacy-policy">
+                Impressum © 2020
 			</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

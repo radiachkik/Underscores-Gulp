@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+$large-size: 992px;
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+body.privacy-policy h1, body.privacy-policy h2, body.privacy-policy h3, {
+  text-align: center;
+  margin: 0.5em;
+}
+
+body.privacy-policy p {
+  text-align: justify;
+}
+
+@media screen and (min-width: ($large-size)) {
+  body.privacy-policy #content{
+    padding: 0 15%;
+  }
+}

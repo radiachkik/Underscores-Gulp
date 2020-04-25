@@ -88,6 +88,17 @@
 
 			self = self.parentElement;
 		}
+
+		if (toggled) {
+			toggled = false;
+			anime({
+				targets: menu,
+				left: ['0', '-100vw'],
+				easing: 'linear',
+				duration: 200,
+				delay: 300,
+			});
+		}
 	}
 
 	/**

@@ -5,34 +5,49 @@
 # Service
 # About me
 # Contact
+# Scroll Animations
 --------------------------------------------------------------*/
 
 $medium-size: 768px;
+$xs-size: 576px;
+$xl-size: 1200px;
 
 /*--------------------------------------------------------------
 # Landing Page
 --------------------------------------------------------------*/
 
 /* Position of the text on the landing page */
-.landing-page-container {
+#welcome {
   position: relative;
   top: -3em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  height: 90vh;
+  height: 85vh;
   width: 100%;
 }
 
-.welcome-headline {
+#welcome .welcome-headline {
   font-size: 3em;
 }
 
-/* Mobile menu */
 @media screen and (max-width: ($medium-size - 1)) {
-  .welcome-headline {
-    font-size: 2em;
+  #welcome {
+    top: -4em;
+  }
+  #welcome .welcome-headline {
+    font-size: 1.75em;
+    margin: 1.5em 0;
+  }
+
+  #welcome .wp-block-button{
+    padding: 0.25em;
+    max-width: 90%;
+  }
+
+  #welcome .wp-block-button a{
+    font-size: 1em;
   }
 }
 
@@ -40,75 +55,201 @@ $medium-size: 768px;
 # Service
 --------------------------------------------------------------*/
 
-.service-container {
+#service {
   text-align: center;
-  padding: 1em;
-  height: 100vh;
-}
-
-.service-container h2 {
-  font-size: 3em;
   margin: 1em;
 }
 
-.service-container .wp-block-column {
+
+#service h2 {
+  font-size: 3em;
+  margin: 1em 0;
+}
+
+#service .wp-block-column {
   padding: 1em;
   background-color: #00a8cc;
   border-radius: 1em;
 }
 
-.service-container .service-description {
-   margin: 2em 25%;
+#service .service-description {
+   margin: 2em 10%;
+}
 
- }
+@media screen and (max-width: ($xl-size - 1)) {
+  #service {
+    padding: 0;
+  }
+
+  #service .wp-block-columns {
+    flex-wrap: wrap;
+  }
+
+  #service .wp-block-column {
+    flex-basis: calc(50% - 50px);
+  }
+
+  #service .wp-block-column {
+    margin: 0.5em;
+  }
+}
+
+@media screen and (max-width: ($medium-size - 1)) {
+  #service .service-description {
+    margin: 1em 0;
+  }
+
+  #service .wp-block-column {
+    margin: 0.5em auto;
+  }
+}
+
+@media screen and (max-width: ($xs-size - 1)) {
+  #service .wp-block-column {
+    margin: 0.5em 0;
+  }
+}
 
 /*--------------------------------------------------------------
 # About me
 --------------------------------------------------------------*/
 
-.about-container {
-  height: 100vh;
-}
-
-.about-container h2 {
-  font-size: 3em;
+#about {
   margin: 1em;
 }
 
-.about-container .profile-picture img{
+#about h2 {
+  font-size: 3em;
+  margin: 1em 0;
+}
+
+#about .profile-picture img{
   border-radius: 50%;
 }
 
-.about-container .wp-block-column{
+#about .wp-block-column{
   text-align: center;
   border: 1px solid white;
   border-radius: 0.5em;
   padding: 0.5em 1em;
 }
 
-.about-container svg {
+
+
+#about svg {
   margin: 0.5em;
+}
+
+#about .wp-block-media-text__content > p {
+  margin: 1em 10%;
+}
+
+@media screen and (max-width: ($xl-size - 1)) {
+  #about {
+    text-align: center;
+  }
+
+
+  #about .profile-picture img{
+    width: 60%;
+    margin-bottom: 2em;
+  }
+
+  #about .profile-picture {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #about .wp-block-media-text__content {
+    padding: 0;
+  }
+
+  #about .wp-block-column{
+    margin: 0.5em;
+  }
+
+  #about .skill-networking {
+    width: 100%;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width: ($medium-size - 1)) {
+  #about .profile-picture img{
+    width: 80%;
+  }
+
+  #about .wp-block-column{
+    margin: 0.5em auto;
+  }
+
+  #about .wp-block-media-text__content > p {
+    margin: 1em 0;
+  }
 }
 
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
 
-.contact-container {
-  height: 100vh;
+#contact {
+  margin: 2em;
   text-align: center;
 }
 
-.contact-container h2 {
+#contact h2 {
   font-size: 3em;
-  margin: 1em;
+  margin: 1em 0;
 }
 
-.contact-container .wpcf7-text, .contact-container .wpcf7-textarea {
+#contact .wpcf7-text, #contact .wpcf7-textarea {
   background-color: transparent;
+  width: 100%;
+  margin: 0 auto;
+  border-color: white;
 }
 
-.contact-container .wpcf7-submit {
+#contact .wpcf7-text:hover, #contact .wpcf7-text:focus, #contact .wpcf7-textarea:hover, #contact .wpcf7-textarea:focus {
+  border-color: #00a8cc !important;
+}
+
+#contact .wpcf7-submit {
   background-color: #00a8cc;
   width: 15%;
+  font-family: 'RobotoBold', Arial, sans-serif;
+  border: none;
+  color: #232323 !important;
 }
+
+.wpcf7-form-control {
+  color: white !important;
+}
+
+@media screen and (max-width: ($medium-size - 1)) {
+  #contact .wpcf7-submit {
+    width: 33%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Animation
+--------------------------------------------------------------*/
+
+.reveal {
+  opacity: 0;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.reveal.visible {
+  opacity: 1;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+

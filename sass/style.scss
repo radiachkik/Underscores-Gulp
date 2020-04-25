@@ -1,23 +1,14 @@
 /*!
 Theme Name: Homepage
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
+Theme URI: http://radiachkik.com/
+Author: Radi Achkik
+Author URI: http://radiachkik.com/
+Description: My personal Homepage
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: homepage
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-Homepage is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+Tags: custom-background, custom-logo, custom-menu, featured-images, translation-ready
 */
 
 /*--------------------------------------------------------------
@@ -56,8 +47,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 @import "welcome";
+@import "impressum";
 
 $large-size: 992px;
+$medium-size: 720px;
 
 /* Document
 	 ========================================================================== */
@@ -384,6 +377,11 @@ template {
   src: url('./fonts/Ocean-Bold.ttf');
 }
 
+@font-face {
+  font-family: RobotoBold;
+  src: url('./fonts/Roboto-Bold.ttf');
+}
+
 body,
 button,
 input,
@@ -654,6 +652,7 @@ a:active {
   display: block;
   float: left;
   width: 100%;
+  z-index: 100;
 }
 
 .main-navigation ul {
@@ -706,6 +705,7 @@ a:active {
   display: block;
   position: relative;
   z-index: 10;
+  padding-top: 0.75em;
 }
 
 /* Mobile menu */
@@ -717,7 +717,7 @@ a:active {
     height: 100vh;
     width: 100vw;
     background-color: #000;
-    opacity: 0.9;
+    opacity: 1;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -909,6 +909,24 @@ header .site-title {
   font-weight: bold;
   text-transform: uppercase;
   margin: 0;
+}
+
+@media screen and (max-width: ($large-size - 1)) {
+  header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 1em 0.5em;
+    z-index: 20;
+    opacity: 0.8;
+    background-color: #232323;
+  }
+}
+
+@media screen and (max-width: ($medium-size - 1)) {
+  header {
+    padding: 0.5em 0 0.5em 1em;
+  }
 }
 
 /* Colorize the contact menu item */
@@ -1103,6 +1121,7 @@ object {
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  opacity: 0.8;
 }
 
 

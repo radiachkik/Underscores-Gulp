@@ -6,3 +6,4 @@ const fontawesome = require('@fortawesome/fontawesome-free/js/all');
 window.anime = require('animejs/lib/anime');
 window.Particles = require('particlesjs');
 window.ScrollMagic = require('scrollmagic');
+window.$ = require('jquery');

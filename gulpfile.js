@@ -19,6 +19,8 @@ const imagemin = require('gulp-imagemin');
 
 const browserSync = require('browser-sync').create();
 
+const merge = require("merge-stream");
+
 /* Error Handling */
 var onError = function (err) {
     // If the error occurred in a scss file
@@ -102,3 +104,9 @@ gulp.task('watch', function() {
 /* Default Task */
 gulp.task('default', gulp.series('sass', 'browserify', 'js', 'images', 'watch'));
 
+gulp.task('extract', function () {
+    return merge([
+        gulp.src('./src/img/*.png').pipe(gulp.dest('./deploy/imgs')),
+        gulp.src('./src/data/*.json').pipe(gulp.dest('./deploy/data'))
+    ]);
+});
