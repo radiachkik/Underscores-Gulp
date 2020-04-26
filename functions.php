@@ -143,7 +143,6 @@ add_action( 'widgets_init', 'homepage_widgets_init' );
  * Enqueue scripts and styles.
  */
 function homepage_scripts() {
-    wp_deregister_script('jquery');
 	wp_enqueue_style( 'homepage-style', get_stylesheet_uri(), array(), _S_VERSION );
 
     wp_enqueue_script( 'gulp-wordpress-javascript', get_template_directory_uri() . '/js/app.min.js', array(), '20151215', true );
