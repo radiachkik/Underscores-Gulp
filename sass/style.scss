@@ -36,6 +36,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, translation-
 	## Galleries
 # Customize Bootstrap
 # Particles Background
+# ReCaptcha
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -723,7 +724,7 @@ a:active {
     text-align: center;
     font-size: 2em;
   }
-  .main-navigation ul li{
+  .main-navigation ul li {
     margin: 0.5em;
   }
 }
@@ -883,7 +884,7 @@ a:active {
 }
 
 /* Color the header links and mobile menu icon*/
-#masthead a, #masthead a:visited, #masthead a:hover, #masthead nav svg{
+#masthead a, #masthead a:visited, #masthead a:hover, #masthead nav svg {
   color: white;
 }
 
@@ -930,9 +931,10 @@ a:active {
 }
 
 /* Colorize the contact menu item */
-.contact-menu a{
+.contact-menu a {
   color: #00a8cc !important;
 }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -986,6 +988,7 @@ a:active {
 footer {
   text-align: center;
 }
+
 footer a, footer a:visited, footer a:hover {
   color: white;
 }
@@ -1124,5 +1127,10 @@ object {
   opacity: 0.8;
 }
 
+/*--------------------------------------------------------------
+# Particles Background
+--------------------------------------------------------------*/
 
-
+div.grecaptcha-badge {
+  display: none;
+}
