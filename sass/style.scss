@@ -912,6 +912,12 @@ a:active {
   margin: 0;
 }
 
+@media screen and (min-width: ($large-size - 1)) {
+  #masthead ul{
+    padding: 0.5em 0;
+  }
+}
+
 @media screen and (max-width: ($large-size - 1)) {
   #masthead {
     position: sticky;
