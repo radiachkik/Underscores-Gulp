@@ -383,6 +383,11 @@ template {
   src: url('./fonts/Roboto-Bold.ttf');
 }
 
+@font-face {
+  font-family: OrbitronBold;
+  src: url('./fonts/Orbitron-Bold.ttf');
+}
+
 body,
 button,
 input,
@@ -390,7 +395,7 @@ select,
 optgroup,
 textarea {
   color: white;
-  font-family: 'OceanNormal', Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -403,7 +408,7 @@ h4,
 h5,
 h6 {
   clear: both;
-  font-family: 'OceanBold', Arial, sans-serif;
+  font-family: 'OrbitronBold', Arial, sans-serif;
 }
 
 p {
@@ -886,6 +891,7 @@ a:active {
 /* Color the header links and mobile menu icon*/
 #masthead a, #masthead a:visited, #masthead a:hover, #masthead nav svg {
   color: white;
+  font-family: 'OrbitronBold', Arial, sans-serif;
 }
 
 #masthead a:hover {
